@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anónimo y Confiable - Inversiones</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            text-align: center;
+            color: white;
+            background-image: url('sep09.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        header {
+            background-color: rgb(61, 55, 55);
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo img {
+            height: 100px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        section {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fixed-buttons {
+            position: fixed;
+            bottom: -100px;
+            width: 100%;
+            display:block;
+            justify-content: center;
+            gap: 20px;
+            background-color: rgba(17, 17, 17, 0.8);
+            padding: 10px 0;
+            flex-wrap: wrap;
+            transition: bottom 0.5s ease-in-out;
+        }
+        .fixed-buttons a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .telegram-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .telegram-section img {
+            width: 100px;
+            height: 100px;
+        }
+        .tiktok-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .tiktok-section img {
+            width: 100px;
+            height: 100px;
+        }
+        b {
+            font-size: 25px;
+            color: beige;
+        }
+        p {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 18px;
+            color: #f8f8f8;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+            .logo img {
+                height: 80px;
+            }
+            nav ul {
+                justify-content: center;
+                padding: 10px 0;
+            }
+            .fixed-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .telegram-section img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+            const fixedButtons = document.querySelector(".fixed-buttons");
+            function checkScroll() {
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        section.classList.add("visible");
+                    }
+                });
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+                    fixedButtons.style.bottom = "0";
+                } else {
+                    fixedButtons.style.bottom = "-100px";
+                }
+            }
+            window.addEventListener("scroll", checkScroll);
+            checkScroll();
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo de Anónimo y Confiable">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#como-funciona">Cómo Funciona</a></li>
+                <li><a href="#contacto">Ingresa Aqui</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="inicio">
+        <h1>Bienvenido a Anónimo y Confiable</h1>
+        <p>En Anónimo y Confiable, te ofrecemos una forma segura y sencilla de hacer crecer tu dinero todos los días. A través de estrategias avanzadas de trading en la bolsa de valores, inversiones en criptomonedas y préstamos gestionados por expertos, generamos rendimientos constantes para nuestros inversores.</p>
+        <p><b>Inversiones globales:</b> Participa desde cualquier parte del mundo con divisas y criptomonedas.</p>
+        <p><b>Ganancias diarias:</b> El crecimiento de tu inversión en tiempo real a través de nuestro canal exclusivo de Telegram.</p>
+        <p><b>Préstamos accesibles:</b> Obtén financiamiento rápido con pocos requisitos y tasas competitivas.</p>
+        <p>Tú decides cómo y cuándo empezar. Únete a nosotros y deja que tu dinero trabaje por ti.</p>
+    </section>
+    
+    <section id="como-funciona">
+        <h2>¿Cómo Funciona?</h2>
+        <p>En Anónimo y Confiable, hacemos que tu dinero trabaje por ti de forma segura y transparente. Nuestro sistema combina trading en la bolsa de valores, inversiones en criptomonedas y préstamos gestionados por expertos para generar rendimientos diarios.</p>
+        <p>🔹 Invierte fácilmente desde cualquier parte del mundo con divisas o criptomonedas.</p>
+        <p>🔹 Genera ganancias diarias que se suman automáticamente a tu saldo.</p>
+        <p>🔹 Monitorea tu inversión en tiempo real a través de nuestro canal exclusivo de Telegram.</p>
+        <p>🔹 Retira tu dinero cuando quieras, a medida que tus fondos crecen cada día.</p>
+        <p>Cada día que pase, tu saldo aumentará y tendrás más dinero disponible para retirar. Sin complicaciones, sin trámites largos, solo resultados reales.</p>
+
+    </section>
+    
+    <section id="contacto">
+        <h2>Ingresa Aqui</h2>
+        <p>Ingresa a través de nuestro canal oficial en Telegram para iniciar a ganar con tu inversión.</p>
+        <div class="telegram-section">
+            <a href="https://t.me/Anonimoyconfiable77" target="_blank">
+                <img src="telegram.webp" alt="Telegram">
+            </a>
+            <img src="qr.jpg" alt="Código QR de Telegram">
+        </div>
+    </section>
+
+    <section id="Redes Sociales">
+        <h2>Síguenos en Nuestras Redes Sociales</h2>
+        <div class="tiktok-section">
+            <a href="https://www.tiktok.com/@anonimoyconfiable1" target="_blank">
+                <img src="tiktok.png" alt="tiktok">
+            </a>
+        </div>
+    </section>    
+
+    <div class="fixed-buttons">
+        <a href="servicios.html">Servicios</a>
+        <a href="seguridad.html">Seguridad</a>
+        <a href="https://t.me/Anonimoyconfiable77">Contacto</a>
+    </div>
+
+    
+</body>
+</html>
